@@ -37,21 +37,19 @@ const SearchBar: React.FC<ISearchBarProps> = ({ setImage, setLoading }) => {
   };
 
   return (
-    <div className="w-full md:w-2/3">
-      <div className="flex items-center gap-1 md:justify-center">
-        <input
-          type="text"
-          className="border-2 text-gray-700 border-black p-2 w-full shadow-lg"
-          placeholder="Type a prompt..."
-          onChange={(e) => setPrompt(e.target.value)}
-        />
-        <button
-          onClick={handleClick}
-          className="bg-black text-white p-2 font-bold border-2 shadow-lg border-black"
-        >
-          Search
-        </button>
-      </div>
+    <div className="w-full md:w-2/3 flex items-center gap-1 md:justify-center">
+      <input
+        type="text"
+        className="border-2 text-gray-700 border-black p-2 w-full shadow-lg"
+        placeholder="Type a prompt..."
+        onChange={(e) => setPrompt(e.target.value)}
+      />
+      <button
+        onClick={handleClick}
+        className="bg-black text-white p-2 font-bold border-2 shadow-lg border-black"
+      >
+        Search
+      </button>
     </div>
   );
 };
