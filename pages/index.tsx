@@ -65,7 +65,7 @@ export default function Home() {
                 width={400}
               />
               <p className="font-bold text-gray-900 text-2xl -pt-10 -mt-10">
-                Fetching data...
+                Fetching images...
               </p>
             </div>
           )}
