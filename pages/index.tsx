@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import SearchBar from "../components/SearchBar";
+import UploadImage from "../components/UploadImage";
 import { useState } from "react";
 import Lottie from "react-lottie";
 import * as NotFoundAnimationData from "../utils/not-found.json";
@@ -41,8 +42,14 @@ export default function Home() {
       </Head>
       <main className="h-screen">
         <nav className="h-1/6 flex p-2 gap-3 md:gap-1 flex-col md:flex-row items-center md:justify-between">
-          <h1 className="font-bold text-2xl md:text-3xl">Duhhl-E</h1>
+          <h1
+            className="font-bold text-2xl md:text-3xl cursor-pointer"
+            onClick={() => setImage([])}
+          >
+            Duhhl-E
+          </h1>
           <SearchBar setImage={setImage} setLoading={setLoading} />
+          {/* <UploadImage setImage={setImage} setLoading={setLoading} /> */}
         </nav>
         <section
           className={
