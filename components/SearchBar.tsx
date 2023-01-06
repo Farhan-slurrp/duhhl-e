@@ -36,6 +36,12 @@ const SearchBar: React.FC<ISearchBarProps> = ({ setImage, setLoading }) => {
     }
   };
 
+  async function handleEnterKeyPressed(e: any) {
+    if (e.key === "Enter") {
+      await handleClick();
+    }
+  }
+
   return (
     <div className="w-full md:w-2/3 flex items-center gap-1 md:justify-center">
       <input
@@ -43,6 +49,7 @@ const SearchBar: React.FC<ISearchBarProps> = ({ setImage, setLoading }) => {
         className="border-2 text-gray-700 border-black p-2 w-full shadow-lg"
         placeholder="Type a prompt..."
         onChange={(e) => setPrompt(e.target.value)}
+        onKeyUp={handleEnterKeyPressed}
       />
       <button
         onClick={handleClick}
