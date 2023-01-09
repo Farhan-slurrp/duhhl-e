@@ -1,5 +1,7 @@
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import MessageBottomBar from "../components/MessageBottomBar";
 
 export interface IMessage {
@@ -40,24 +42,26 @@ export default function ChatGPT() {
           {messages.length > 0 && (
             <div className="flex flex-col p-2 gap-4 w-full">
               {messages.map((msg, index) => {
+                const { from, message } = msg;
                 return (
                   <div
                     className={
-                      msg.from == "user"
+                      from == "user"
                         ? "w-full flex justify-end"
                         : "w-full flex justify-start"
                     }
                     key={index}
                   >
-                    <p
+                    <ReactMarkdown
+                      // eslint-disable-next-line react/no-children-prop
+                      children={message}
+                      remarkPlugins={[remarkGfm]}
                       className={
-                        msg.from == "user"
-                          ? "bg-blue-500 text-white rounded-lg font-semibold py-2 px-3"
-                          : "bg-gray-200 rounded-lg font-semibold py-2 px-3"
+                        from == "user"
+                          ? "bg-blue-500 text-white text-end rounded-lg font-semibold py-2 px-3 max-w-xs md:max-w-2xl overflow-auto"
+                          : "bg-gray-200 rounded-lg text-start font-semibold py-2 px-3 max-w-xs md:max-w-2xl overflow-auto"
                       }
-                    >
-                      {msg.message}
-                    </p>
+                    />
                   </div>
                 );
               })}
