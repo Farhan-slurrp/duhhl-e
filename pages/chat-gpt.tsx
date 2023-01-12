@@ -58,8 +58,8 @@ export default function ChatGPT() {
                       remarkPlugins={[remarkGfm]}
                       className={
                         from == "user"
-                          ? "bg-blue-500 text-white text-end rounded-lg font-semibold py-2 px-3 max-w-xs md:max-w-2xl overflow-auto"
-                          : "bg-gray-200 rounded-lg text-start font-semibold py-2 px-3 max-w-xs md:max-w-2xl overflow-auto"
+                          ? "bg-blue-500 text-white text-justify rounded-lg font-semibold py-2 px-3 max-w-xs md:max-w-2xl overflow-auto"
+                          : "bg-gray-200 rounded-lg text-justify font-semibold py-2 px-3 max-w-xs md:max-w-2xl overflow-auto"
                       }
                     />
                   </div>
