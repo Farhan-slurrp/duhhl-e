@@ -71,8 +71,8 @@ export default function Home() {
                 height={400}
                 width={400}
               />
-              <p className="font-bold text-gray-900 text-2xl -pt-10 -mt-10">
-                Fetching images...
+              <p className="font-bold text-gray-900 -pt-10 -mt-10">
+                Generating images...
               </p>
             </div>
           )}
